@@ -6,6 +6,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.box_check_update = false
 
+
   config.vm.define :servidor do |servidor|
     servidor.vm.box = "debian/bookworm64"
     servidor.vm.hostname = "Servidor"
@@ -14,6 +15,7 @@ Vagrant.configure("2") do |config|
     virtualbox__intnet: true
     servidor.vm.provision "shell", inline: <<-SHELL
       apt-get install isc-dhcp-server -y
+      cp /vagrant/dhcp.conf /etc/dhcp/dhclient.conf
     SHELL
   end
 
