@@ -15,7 +15,8 @@ Vagrant.configure("2") do |config|
     virtualbox__intnet: true
     servidor.vm.provision "shell", inline: <<-SHELL
       apt-get install isc-dhcp-server -y
-      cp /vagrant/dhcp.conf /etc/dhcp/dhclient.conf
+      cp -v /vagrant/dhcp.conf /etc/dhcp/dhcpd.conf
+      cp -v /vagrant/isc-dhcp-server /etc/default/isc-dhcp-server
     SHELL
   end
 
