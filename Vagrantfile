@@ -31,7 +31,7 @@ Vagrant.configure("2") do |config|
     c2.vm.box = "debian/bookworm64"
     c2.vm.hostname = "cliente2"
     c2.vm.network "private_network",
-    :mac "012AB45CD67E",
+    mac: "5CA1AB1E0001",
       virtualbox__intnet: true
   end
 end
